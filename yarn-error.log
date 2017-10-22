@@ -1,0 +1,72 @@
+Arguments: 
+  /Users/mwilcox/.nvm/versions/node/v6.11.3/bin/node /usr/local/Cellar/yarn/1.2.1/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/mwilcox/.nvm/versions/node/v6.11.3/bin:/Users/mwilcox/.rvm/gems/ruby-2.2.1/bin:/Users/mwilcox/.rvm/gems/ruby-2.2.1@global/bin:/Users/mwilcox/.rvm/rubies/ruby-2.2.1/bin:/Users/mwilcox/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/mwilcox/.rvm/bin
+
+Yarn version: 
+  1.2.1
+
+Node version: 
+  6.11.3
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+  	"name": "advanced-react",
+  	"version": "1.0.0",
+  	"description": "Demo files for Club AJAX Presentation",
+  	"main": "index.js",
+  	"repository": "https://github.com/clubajax/advanced-react.git",
+  	"author": "clubajax",
+  	"license": "MIT",
+  	"scripts": {
+  		"start": "webpack-dev-server --config ./config/webpack.config.js"
+  	},
+  	"devDependencies": {
+  		"html-webpack-plugin": "^2.30.1",
+  		"babel-loader": "^6.3.2",
+  		"babel-plugin-react": "^1.0.0",
+  		"babel-preset-stage-0": "^6.5.0",
+  		"babel-register": "^6.11.6",
+  		"css-loader": "^0.23.1",
+  		"file-loader": "^1.1.5",
+  		"node-sass": "^3.7.0",
+  		"react-hot-loader": "3.0.0-beta.2",
+  		"resolve-url-loader": "^2.0.2",
+  		"sass-loader": "^3.2.0",
+  		"style-loader": "^0.13.1",
+  		"url-loader": "^0.5.7",
+  		"webpack": "^3.8.1",
+  		"webpack-dev-server": "^2.9.3",
+  		"webpack-hot-middleware": "^2.18.2"
+  	},
+  	"dependencies": {
+  		"@clubajax/date-picker": "^0.10.8",
+  		"@clubajax/promise-polyfill": "^1.0.1",
+  		"@clubajax/react-web-component": "^0.9.2",
+  		"react": "^16.0.0",
+  		"react-dom": "^16.0.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/strip-indent: connect ENOBUFS 172.31.44.27:80 - Local (172.31.27.44:47785)
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:62027:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:123011:22)
+      at emitTwo (events.js:106:13)
+      at Request.emit (events.js:191:7)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:123994:10)
+      at emitOne (events.js:96:13)
+      at Request.emit (events.js:188:7)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:123914:12)
+      at IncomingMessage.g (events.js:292:16)
+      at emitNone (events.js:91:20)
