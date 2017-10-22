@@ -44,7 +44,8 @@ module.exports = function (isProd, ROOT) {
 		}
 	};
 
-	const common = [babel, css.rules.main, files];
+	console.log('css.rules', css);
+	const common = [babel, css, files];
 	const dev = [];
 
 	return [...common, ...dev];

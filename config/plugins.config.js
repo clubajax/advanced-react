@@ -5,8 +5,6 @@ const cssFn = require('./css.config');
 
 module.exports = function plugins (isProd, ROOT) {
 
-	const css = cssFn(isProd);
-
 	const vendorName = isProd ? '[name].[chunkhash].js' : 'vendor.js';
 	const ENV = 'dev';
 
@@ -27,7 +25,7 @@ module.exports = function plugins (isProd, ROOT) {
 		template: 'index.html'
 	});
 
-	const common = [css.plugins.main, chunk, html];
+	const common = [chunk, html];
 	const dev = [hmr];
 	const prod = [];
 
