@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './styles/main.scss';
+import Router from './Router';
 
 function renderApp () {
 	render(
-		<div>React App</div>, document.getElementById('react-root')
+		<Router />, document.getElementById('react-root')
 	);
 }
 
