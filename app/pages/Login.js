@@ -26,6 +26,7 @@ export default class Login extends Component {
 	render () {
 		return (
 			<div className="login-page">
+				<div className="login-bg" />
 				<div className="login-widget">
 					<ClubAjax />
 					<AppTitle />
@@ -38,9 +39,9 @@ export default class Login extends Component {
 							<span>Password</span>
 							<input name="password" type="password" />
 						</label>
-						<button>
-							Login
-						</button>
+						<div className="button-row">
+							<button className="outlined">Login</button>
+						</div>
 					</form>
 				</div>
 			</div>
