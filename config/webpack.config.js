@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ROOT = __dirname + '/../';
-const PORT = '8080';
+const PORT = '8888';
 const ENV = process.env.API;
 
 module.exports = function (isProd) {
@@ -33,7 +33,7 @@ module.exports = function (isProd) {
 		output: {
 			filename: appName,
 			path: ROOT + '/dist',
-			publicPath: isProd ? '/' : ENV === 'vm' ? '/' : 'http://localhost:8080/'
+			publicPath: isProd ? '/' : ENV === 'vm' ? '/' : `http://localhost:${PORT}/`
 		},
 
 		module: {
@@ -45,6 +45,6 @@ module.exports = function (isProd) {
 		// eval-source-map caused bugs and creates hard-to-read source code
 		devtool: isProd ? 'source-map' : 'inline-source-map',
 
-		devServer: require('./server.config')(ROOT)
+		devServer: require('./server.config')(ROOT, PORT)
 	};
 };
