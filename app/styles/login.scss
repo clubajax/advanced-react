@@ -1,0 +1,15 @@
+.login-page{
+    .login-widget{
+        max-width: 350px;
+        padding: 20px;
+        margin: 100px auto;
+        background-color: $blue-dark;
+        border-radius: 3px;
+        h1{
+            margin: 20px auto;
+        }
+        label{
+            color: #eee;
+        }
+    }
+}
