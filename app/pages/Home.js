@@ -9,12 +9,14 @@ export default function Home () {
 	return (
 		<main>
 			<h2>Home Page</h2>
-			<data-table
-				data={getData(columns)}
-				scrollable={true}
-				sortable={true}
-				stretch-column="company"
-			/>
+			<div className="data-table-wrapper">
+				<data-table
+					data={getData(columns)}
+					scrollable={true}
+					sortable={true}
+					stretch-column="company"
+				/>
+			</div>
 		</main>
 	)
 }
