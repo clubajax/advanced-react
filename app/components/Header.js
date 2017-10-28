@@ -17,7 +17,7 @@ export default function Header () {
 			</menu>
 			<menu>
 				<Link to="/home">Home</Link>
-				<Link to="/example">Example</Link>
+				<Link to="/settings">Settings</Link>
 			</menu>
 		</header>
 	)

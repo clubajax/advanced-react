@@ -1,4 +1,5 @@
 import React from 'react';
+import WebComponent from '@clubajax/react-web-component';
 import '@clubajax/data-table';
 import getData from '../util/data-20';
 
@@ -10,10 +11,12 @@ export default function Home () {
 		<main>
 			<h2>Home Page</h2>
 			<div className="data-table-wrapper">
-				<data-table
+				<WebComponent
+					component="data-table"
 					data={getData(columns)}
-					scrollable={true}
-					sortable={true}
+					scrollable="true"
+					selectable="true"
+					sortable="true"
 					stretch-column="company"
 				/>
 			</div>
