@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ClubAjax from '../assets/ClubAjax';
 import AppTitle from '../assets/AppTitle';
 import Error from '../components/Error';
+import Button from '../components/Button';
 import { login } from '../util/api';
 import goto from '../util/goto';
 import bind from '../util/bind';
@@ -13,19 +14,23 @@ export default class Login extends Component {
 		this.state = {
 			username: '',
 			password: '',
-			error: null
+			error: null,
+			busy: false
 		};
 		bind(this, 'submit,onChange');
 	}
 
 	submit (e) {
 		e.preventDefault();
+		this.setState({ busy: true });
 		login(this.state.username, this.state.password).then(() => {
+			this.setState({ busy: false });
 			goto('/home');
 		}).catch((e) => {
 			console.log('fail', e);
 			this.setState({
-				error: e
+				error: e,
+				busy: false
 			});
 		});
 		return false;
@@ -53,9 +58,9 @@ export default class Login extends Component {
 							<span>Password</span>
 							<input name="password" type="password" onChange={this.onChange} />
 						</label>
-						{this.state.error && <Error error={this.state.error} />}
+						<Error error={this.state.error} />
 						<div className="button-row">
-							<button className="outlined">Login</button>
+							<Button className="outlined" busy={this.state.busy}>Login</Button>
 						</div>
 					</form>
 				</div>
