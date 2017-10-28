@@ -1,7 +1,7 @@
 const path = require('path');
 const cssFn = require('./css.config');
 
-const libsToBabelize = /date-picker|data-table/;
+const libsToBabelize = /date-picker|data-table|popup-list/;
 
 module.exports = function (isProd, ROOT) {
 
@@ -27,8 +27,8 @@ module.exports = function (isProd, ROOT) {
 			// see libsToBabelize above
 			path.join(ROOT, './app'),
 			path.join(ROOT, './node_modules/@clubajax/data-table'),
+			path.join(ROOT, './node_modules/@clubajax/popup-list'),
 			// path.join(ROOT, './node_modules/@clubajax/date-picker'),
-			// path.join(ROOT, './node_modules/@clubajax/data-table'),
 			// path.join(ROOT, './node_modules/@clubajax/react-web-component')
 		],
 		query: {
