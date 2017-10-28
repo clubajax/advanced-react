@@ -8,7 +8,8 @@ export default class Field extends Component {
 		this.state = {
 			value: '',
 			touched: false,
-			errorMessage: ''
+			errorMessage: '',
+			className: ''
 		};
 		bind(this, 'onChange,onBlur');
 	}
@@ -37,27 +38,39 @@ export default class Field extends Component {
 	}
 
 	onValid (value) {
-		if(this.props.onValid){
-			this.props.onValid({
-				name: this.props.name,
-				valid: !this.props.validation(value)
+		if (this.props.validation && this.state.touched) {
+			const errorMessage = this.props.validation(value);
+			const valid = !errorMessage;
+			this.setState({
+				errorMessage
 			});
+
+			if (this.props.onValid) {
+				this.props.onValid({
+					name: this.props.name,
+					valid
+				});
+			}
+			if (valid && this.state.className) {
+				this.setState({ className: '' });
+			} else if (!valid && !this.state.className) {
+				this.setState({ className: 'invalid' });
+			}
 		}
 	}
 
 	render () {
-		const {type = 'text', label, name } = this.props;
+		const { type = 'text', label, name } = this.props;
 		const msg = this.state.errorMessage;
-
+		const className = this.state.className;
 		return (
-			<label>
+			<label className={className}>
 				<span>{label}</span>
 				<input
 					type={type}
 					value={this.state.value}
 					name={name}
 					onChange={this.onChange}
-					onBlur={this.onBlur}
 				/>
 				{msg && <div className="error-message">{msg}</div>}
 			</label>
