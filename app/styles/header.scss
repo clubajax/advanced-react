@@ -6,5 +6,15 @@ header{
             padding: 3px;
             color: white;
         }
+        &.right-top{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            icon-logout, span{
+                vertical-align: middle;
+                margin-left: 5px;
+            }
+        }
     }
 }

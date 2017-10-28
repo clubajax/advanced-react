@@ -10,6 +10,9 @@ body{
 * {
     box-sizing: border-box;
 }
+menu{
+    margin: 0;
+}
 a{
     text-decoration: none;
     &:hover{

@@ -13,3 +13,17 @@ h1{
     font-family: "Helvetica Neue";
     font-weight: 200;
 }
+
+icon-logout{
+    display: inline-block;
+    width: 20px;
+    svg {
+        fill: white;
+    }
+    &:hover{
+        cursor: pointer;
+        svg{
+            fill: yellow;
+        }
+    }
+}

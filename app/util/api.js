@@ -1,4 +1,5 @@
 import storage from './storage';
+import goto from './goto';
 
 const API_DELAY = 1000;
 
@@ -15,6 +16,7 @@ export function login (username, password) {
 		timed(() => {
 			if (users[username] === password) {
 				storage('token', true);
+				storage('username', username);
 				resolve();
 			} else {
 				reject();
@@ -27,6 +29,8 @@ export function logout () {
 	return new Promise((resolve, reject) => {
 		timed(() => {
 			storage('token', 'remove');
+			storage('username', 'remove');
+			goto('/');
 			resolve();
 		})
 	});
