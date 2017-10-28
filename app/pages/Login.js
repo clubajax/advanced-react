@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ClubAjax from '../assets/ClubAjax';
 import AppTitle from '../assets/AppTitle';
 import { login } from '../util/api';
+import goto from '../util/goto';
 
 export default class Login extends Component {
 
@@ -17,8 +18,9 @@ export default class Login extends Component {
 		window.form = e.target;
 		login(form.username.value, form.password.value).then(() => {
 			console.log('success');
-		}).catch(() => {
-			console.log('fail');
+			goto('/home');
+		}).catch((e) => {
+			console.log('fail', e);
 		});
 		return false;
 	}

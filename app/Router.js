@@ -1,14 +1,15 @@
 import React from 'react';
-import {  BrowserRouter, Route, Switch } from 'react-router-dom';
+import {  Router, Route, Switch } from 'react-router-dom';
+import { history } from './util/goto';
 //
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Example from './pages/Example';
 
 
-export default function Router () {
+export default function AppRouter () {
 	return (
-		<BrowserRouter>
+		<Router history={history}>
 			<div className="app-container">
 				<Switch>
 					<Route exact path="/" component={Login} />
@@ -16,6 +17,6 @@ export default function Router () {
 					<Route path="/example" component={Example} />
 				</Switch>
 			</div>
-		</BrowserRouter>
+		</Router>
 	);
 }

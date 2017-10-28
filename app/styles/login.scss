@@ -1,7 +1,7 @@
 .login-page{
     height: 100%;
     .login-bg{
-        position: absolute;
+        position: fixed;
         top: 0; left: 0; bottom: 0; right: 0;
         height: auto;
         background: url(static/canyon.jpg) no-repeat center center fixed;
@@ -21,6 +21,7 @@
         margin: 100px auto;
         background-color: $blue-dark-op;
         border-radius: 3px;
+        border: 2px solid white;
         h1{
             margin: 20px auto;
         }
