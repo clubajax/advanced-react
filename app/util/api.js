@@ -7,8 +7,8 @@ const users = {
 	clubajax: '123'
 };
 
-function timed (cb) {
-	setTimeout(cb, API_DELAY);
+function timed (cb, time) {
+	setTimeout(cb, time || API_DELAY);
 }
 
 export function login (username, password) {
@@ -35,7 +35,7 @@ export function logout () {
 			storage('username', 'remove');
 			goto('/');
 			resolve();
-		})
+		}, 100)
 	});
 }
 
@@ -43,6 +43,6 @@ export function auth () {
 	return new Promise((resolve) => {
 		timed(() => {
 			resolve(storage('token'));
-		})
+		});
 	});
 }
