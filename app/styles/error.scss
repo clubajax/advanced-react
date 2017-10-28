@@ -1,0 +1,28 @@
+.error-display{
+    position: relative;
+    background-color: $error;
+    color: white;
+    padding: 10px 10px 20px 30px;
+    margin: 10px 0;
+    i.icon-error {
+        position: absolute;
+        top: 10px;
+        left: 5px;
+    }
+
+}
+i.icon-error{
+    display: inline-block;
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    &:after{
+        content: '!';
+        font-size: 18px;
+        color: $error;
+    }
+}

@@ -19,7 +19,10 @@ export function login (username, password) {
 				storage('username', username);
 				resolve();
 			} else {
-				reject();
+				reject({
+					status: 401,
+					message: 'Username or password not found'
+				});
 			}
 		})
 	});
