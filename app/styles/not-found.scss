@@ -1,0 +1,37 @@
+.not-found{
+    text-align: center;
+    font-size: 18px;
+}
+.ani-404{
+    display: inline-block;
+    font-family: "Arial Rounded MT Bold", "Arial Black", sans-serif;
+    font-size: 120px;
+    font-weight: bold;
+    color: $error;
+    position: relative;
+    letter-spacing: -7px;
+    .ghost{
+        opacity: .1;
+    }
+    .fall4{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: 76% 80%;
+        animation-duration: 3s;
+        animation-name: hinge;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+@keyframes hinge {
+    0% {transform: rotate(0);animation-timing-function: cubic-bezier(.95,.05,.8,.04);}
+    40% {transform: rotate(180deg);animation-timing-function: cubic-bezier(.17,.84,.44,1);}
+    55% {transform: rotate(260deg);animation-timing-function: ease-in-out;}
+    70% {transform: rotate(140deg);animation-timing-function: ease-in-out;}
+    80% {transform: rotate(200deg);animation-timing-function: ease-in-out;}
+    90% {transform: rotate(170deg);animation-timing-function: ease-in-out;}
+    100% {transform: rotate(180deg);animation-timing-function: ease-in-out;}
+}
