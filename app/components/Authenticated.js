@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from '../assets/Loader';
 import { auth } from '../util/api';
 import goto from '../util/goto';
 
@@ -24,7 +25,7 @@ export default function Authenticated(ComposedComponent, Alt) {
 
 		render() {
 			if (this.state.authed === null) {
-				return null; // TODO - loader
+				return <Loader />
 			}
 			return (
 				<ComposedComponent {...this.props} />
