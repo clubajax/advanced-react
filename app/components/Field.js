@@ -23,12 +23,24 @@ export default class Field extends Component {
 			name: this.props.name,
 			value
 		});
+		this.onValid(value);
 	}
 
 	onBlur () {
 		if (this.props.validation && this.state.touched) {
+			const errorMessage = this.props.validation(this.state.value);
 			this.setState({
-				errorMessage: this.props.validation(this.state.value)
+				errorMessage
+			});
+			this.onValid(this.state.value);
+		}
+	}
+
+	onValid (value) {
+		if(this.props.onValid){
+			this.props.onValid({
+				name: this.props.name,
+				valid: !this.props.validation(value)
 			});
 		}
 	}

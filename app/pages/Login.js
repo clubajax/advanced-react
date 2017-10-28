@@ -17,9 +17,10 @@ export default class Login extends Component {
 			username: '',
 			password: '',
 			error: null,
-			busy: false
+			busy: false,
+			valid: {}
 		};
-		bind(this, 'submit,onChange');
+		bind(this, 'submit,onChange,onValid');
 	}
 
 	submit (e) {
@@ -39,10 +40,15 @@ export default class Login extends Component {
 	}
 
 	onChange (e) {
-		console.log(e);
 		this.setState({
 			[e.name]: e.value
 		});
+	}
+
+	onValid (e) {
+		this.setState({
+			valid: {...this.state.valid, [e.name]: e.valid}
+		})
 	}
 
 	render () {
@@ -58,6 +64,7 @@ export default class Login extends Component {
 							label="Username"
 							validation={required}
 							onChange={this.onChange}
+							onValid={this.onValid}
 						/>
 						<Field
 							type="password"
@@ -65,10 +72,17 @@ export default class Login extends Component {
 							label="Password"
 							validation={password}
 							onChange={this.onChange}
+							onValid={this.onValid}
 						/>
 						<Error error={this.state.error} />
 						<div className="button-row">
-							<Button className="outlined" busy={this.state.busy}>Login</Button>
+							<Button
+								className="outlined"
+								busy={this.state.busy}
+								disabled={!this.state.valid.password || !this.state.valid.username}
+							>
+								Login
+							</Button>
 						</div>
 					</form>
 				</div>
