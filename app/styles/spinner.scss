@@ -24,34 +24,3 @@
         animation: spin 1500ms infinite linear;
     }
 }
-.Xspinner{
-    display: inline-block;
-    position: relative;
-    outline: 0;
-    height: 12px;
-    i{
-        outline: 0;
-        font-size: 24px;
-        -webkit-animation: spin 2s infinite linear;
-        animation: spin 1500ms infinite linear;
-        color: white;
-        position: absolute;
-        left: 0;
-        top: -5px;
-    }
-    span, i{
-        display: inline-block;
-        vertical-align: middle;
-    }
-    span{
-        font-style: italic;
-        color: rgba(255,255,255,0.5);
-        position: relative;
-        margin-left: 25px;
-    }
-    &.no-top{
-        i{
-            top: 0;
-        }
-    }
-}

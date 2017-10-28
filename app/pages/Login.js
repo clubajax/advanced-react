@@ -3,9 +3,11 @@ import ClubAjax from '../assets/ClubAjax';
 import AppTitle from '../assets/AppTitle';
 import Error from '../components/Error';
 import Button from '../components/Button';
+import Field from '../components/Field';
 import { login } from '../util/api';
 import goto from '../util/goto';
 import bind from '../util/bind';
+import { required, password } from '../util/validation'
 
 export default class Login extends Component {
 
@@ -37,8 +39,9 @@ export default class Login extends Component {
 	}
 
 	onChange (e) {
+		console.log(e);
 		this.setState({
-			[e.target.name]: e.target.value
+			[e.name]: e.value
 		});
 	}
 
@@ -50,14 +53,19 @@ export default class Login extends Component {
 					<ClubAjax />
 					<AppTitle />
 					<form onSubmit={this.submit}>
-						<label>
-							<span>Username</span>
-							<input name="username" value={this.state.username} onChange={this.onChange} />
-						</label>
-						<label>
-							<span>Password</span>
-							<input name="password" type="password" onChange={this.onChange} />
-						</label>
+						<Field
+							name="username"
+							label="Username"
+							validation={required}
+							onChange={this.onChange}
+						/>
+						<Field
+							type="password"
+							name="password"
+							label="Password"
+							validation={password}
+							onChange={this.onChange}
+						/>
 						<Error error={this.state.error} />
 						<div className="button-row">
 							<Button className="outlined" busy={this.state.busy}>Login</Button>
