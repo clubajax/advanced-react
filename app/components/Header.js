@@ -7,7 +7,6 @@ import { logout } from '../util/api';
 import '../assets/icon-logout';
 
 export default function Header () {
-	console.log('user:', storage('username'));
 	return (
 		<header>
 			<ClubAjax />
