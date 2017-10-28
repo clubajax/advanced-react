@@ -26,12 +26,20 @@ export function login (username, password) {
 }
 
 export function logout () {
-	return new Promise((resolve, reject) => {
+	return new Promise((resolve) => {
 		timed(() => {
 			storage('token', 'remove');
 			storage('username', 'remove');
 			goto('/');
 			resolve();
+		})
+	});
+}
+
+export function auth () {
+	return new Promise((resolve) => {
+		timed(() => {
+			resolve(storage('token'));
 		})
 	});
 }
