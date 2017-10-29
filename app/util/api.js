@@ -48,13 +48,22 @@ export function auth () {
 }
 
 export function postCar (data) {
-	return new Promise((resolve) => {
-		storage('make', data.make);
-		storage('model', data.model);
-		storage('link', data.link);
-		timed(() => {
-			resolve();
-		});
+	return new Promise((resolve, reject) => {
+		if (data.make) {
+			storage('make', data.make);
+			storage('model', data.model);
+			storage('link', data.link);
+			timed(() => {
+				resolve();
+			});
+		} else {
+			timed(() => {
+				reject({
+					status: 400,
+					message: 'Missing parameters'
+				});
+			});
+		}
 	});
 }
 

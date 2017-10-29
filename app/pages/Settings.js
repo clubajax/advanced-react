@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CarSelector from '../components/CarSelector';
 import Button from '../components/Button';
 import Loader from '../assets/Loader';
-
+import Error from '../components/Error';
 import bind from '../util/bind';
 import { postCar, getCar } from '../util/api';
 
@@ -16,22 +16,39 @@ export default class Settings extends Component {
 			model: null,
 			link: null,
 			busy: false,
-			loading: true
+			loading: true,
+			error: null
 		};
-		bind(this, 'onSave,onSelect');
+		bind(this, 'onSelect,onSubmit');
 	}
 
 	componentDidMount () {
 		getCar().then((data) => {
 			this.setState({ loading: false });
 			if (data) {
-
+				// this.setState({
+				// 	make: data.make,
+				// 	model: data.model,
+				// 	link: data.link
+				// });
+				this.setDisplay(data);
 			}
 		});
 	}
 
-	onSave () {
-		console.log('onSave');
+	onSubmit (e) {
+		e.preventDefault();
+		console.log('onSave', e);
+		this.setState({ busy: true });
+		postCar(this.state).then(() => {
+			this.setState({ busy: false });
+		}).catch((e) => {
+			this.setState({
+				busy: false,
+				error: e
+			});
+
+		});
 	}
 
 	onSelect (e) {
@@ -44,6 +61,7 @@ export default class Settings extends Component {
 			make: data.make,
 			model: data.model,
 			link: data.link,
+			error: null
 		});
 	}
 
@@ -55,10 +73,16 @@ export default class Settings extends Component {
 			<main className="settings-page">
 				<h2>Settings Page</h2>
 				<div className="car-display">
-					<form className="bordered">
+					<form className="bordered" onSubmit={this.onSubmit}>
 						<CarSelector
+							value={{
+								make: this.state.make,
+								model: this.state.model,
+								link: this.state.link
+							}}
 							onChange={this.onSelect}
 						/>
+						<Error error={this.state.error} />
 						<div className="button-row">
 							<Button
 								busyText="Saving..."

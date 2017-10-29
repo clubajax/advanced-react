@@ -6,20 +6,35 @@ import bind from '../util/bind';
 
 export default class CarSelector extends Component {
 
-	constructor () {
+	constructor (props) {
 		super();
 		this.state = {
 			models: [],
 			make: null,
 			model: null
 		};
+		console.log('CONST', props);
 		bind(this, 'onChooseMake,onChooseModel');
+	}
+
+	componentWillReceiveProps (props) {
+		if (props.value && props.value.make) {
+			this.setState({
+				models: models[props.value.make],
+				make: props.value.make,
+				model: props.value.model
+			});
+		}
 	}
 
 	onChooseMake (e) {
 		const value = e.target.value;
 		console.log('make', value);
-		this.setState({ models: models[value], make: value });
+		if (value) {
+			this.setState({ models: models[value], make: value });
+		} else {
+			console.log('RESET');
+		}
 	}
 
 	onChooseModel (e) {
@@ -41,6 +56,7 @@ export default class CarSelector extends Component {
 					label="Make"
 					placeholder="Choose Make"
 					data={makes}
+					value={this.state.make}
 					onChange={this.onChooseMake}
 				/>
 				<WebComponent
@@ -48,6 +64,7 @@ export default class CarSelector extends Component {
 					label="Model"
 					placeholder="Choose Model"
 					data={this.state.models}
+					value={this.state.model}
 					onChange={this.onChooseModel}
 				/>
 			</div>

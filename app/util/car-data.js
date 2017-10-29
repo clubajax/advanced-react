@@ -1,4 +1,4 @@
-export const makes = ['Acura','Audi','BMW','Buick','Cadillac','Chevrolet','Chrysler','Dodge','Ford','GMC','Honda','Hyundai','INFINITI','Jaguar','Jeep','Kia','Lexus','Lincoln','Mazda','Mercedes-Benz','Mitsubishi','Nissan','Porsche','Ram','Rolls-Royce','Scion','Subaru','Tesla','Toyota','Volkswagen','Volvo'];
+export const makes = ['Acura','Audi','BMW','Buick','Cadillac','Chevrolet','Chrysler','Dodge','Ford','GMC','Honda','Hyundai','INFINITI','Jaguar','Jeep','Kia','Lexus','Lincoln','Mazda','Mercedes-Benz','Mitsubishi','Nissan','Porsche','Scion','Subaru','Tesla','Toyota','Volkswagen','Volvo'];
 export const models = {
 	Acura: ['ILX','MDX','MDX Sport Hybrid','NSX','RDX','RLX','RLX Sport Hybrid','TLX'],
 	Audi: ['A3','A3 Sportback e-tron','A4','A4 allroad','A5','A5 Sport','A6','A7','A8','allroad','Q3','Q5','Q7','R8','RS 3','RS 7','S3','S4','S5','S6','S7','S8','SQ5','TT'],
@@ -23,7 +23,6 @@ export const models = {
 	Mitsubishi: ['i-MiEV','Lancer','Mirage','Mirage G4','Outlander','Outlander Sport'],
 	Nissan: ['370Z','Altima','Armada','Frontier Crew Cab','Frontier King Cab','GT-R','JUKE','LEAF','Maxima','Murano','NV1500 Cargo','NV200','NV2500 HD Cargo','NV3500 HD Cargo','NV3500 HD Passenger','Pathfinder','Quest','Rogue','Rogue Sport','Sentra','Titan Crew Cab','Titan King Cab','TITAN Single Cab','TITAN XD Crew Cab','TITAN XD King Cab','TITAN XD Single Cab','Versa','Versa Note'],
 	Porsche: ['718 Boxster','718 Cayman','911','Boxster','Cayenne','Cayman','Macan','Panamera'],
-	RAM: ['1500 Crew Cab','1500 Quad Cab','1500 Regular Cab','2500 Crew Cab','2500 Mega Cab','2500 Regular Cab','3500 Crew Cab','3500 Mega Cab','3500 Regular Cab','ProMaster Cargo Van','ProMaster City','ProMaster Window Van'],
 	Scion: ['FR-S','iA','iM','tC'],
 	Subaru: ['BRZ','Crosstrek','Forester','Impreza','Legacy','Outback','WRX'],
 	Tesla: ['Model S','Model X'],
@@ -34,5 +33,32 @@ export const models = {
 export const links = {
 	Acura: 'http://cdn2.holytaco.com/wp-content/uploads/RN3.jpg',
 	Audi: 'https://img.odometer.com/filter:scale/quill/f/9/b/3/6/d/f9b36db3/7cbbceda9d6c246a8f83e4aa78cbe3fe4686647b.png?mw=615',
-	BMW: 'https://piximus.net/media/37765/redneck-car-hacks-that-everyone-needs-to-try-1.jpg'
+	BMW: 'https://piximus.net/media/37765/redneck-car-hacks-that-everyone-needs-to-try-1.jpg',
+	Buick: 'http://bigrednecktrucks.com/wp-content/uploads/2014/02/52f407d234795.jpg',
+	Cadillac: 'https://i.kinja-img.com/gawker-media/image/upload/s--ribSHghe--/c_scale,f_auto,fl_progressive,q_80,w_800/18nc6noebjpc2jpg.jpg',
+	Chevrolet: 'http://www.onedirt.com/files/2010/03/Picture-2.jpg',
+	Chrysler: 'http://cdn.ebaumsworld.com/mediaFiles/picture/524127/1037240.jpg',
+	Dodge: 'http://whitetrashrepairs.com/wp-content/uploads/2017/01/e2abac1eece7ab7e151cf96a0f9c28bd.jpg',
+	Ford: 'https://i.pinimg.com/736x/7f/e2/db/7fe2db4618e75591df86507ae4f0df5b--truck-bed-car-pictures.jpg',
+	GMC: 'http://i.dailymail.co.uk/i/pix/2014/02/05/article-2552152-1B36337A00000578-792_634x463.jpg',
+	Honda: '',
+	Hyundai: 'http://www.fullredneck.com/wp-content/uploads/2016/04/Redneck-Car-20.jpg',
+	INFINITI: 'https://1funny.com/wp-content/uploads/2010/03/daily_picdump_640_70-e1269007416595.jpg',
+	Jaguar: 'https://whyweprotest.net/attachments/hillbillyair-jpg.257602/',
+	Jeep: 'http://www.stanceiseverything.com/wp-content/uploads/2011/03/jeep2.jpg',
+	Kia: 'http://www.pirate4x4.com/forum/attachments/toyota-truck-4runner/435352-has-anyone-seen-rig-hillbilly-lowrider.jpg',
+	Lexus: 'http://cdn0.wideopenspaces.com/wp-content/uploads/2016/11/screen-shot-2014-12-18-at-9.33.05-am.jpg',
+	Lincoln: 'https://i.pinimg.com/originals/4d/de/01/4dde017ecf1613bf96188fd82c1bdc2e.jpg',
+	Mazda: 'http://cdn.ebaumsworld.com/mediaFiles/picture/75397/981797.jpg',
+	'Mercedes-Benz': 'http://www.fullredneck.com/wp-content/uploads/2015/06/46239.jpg',
+	Mitsubishi: 'http://i.ytimg.com/vi/ULQ6196Tfds/0.jpg',
+	Nissan: 'https://i.imgur.com/PWvXrUB.jpg?1',
+	Porsche: 'https://i.pinimg.com/736x/2a/8c/93/2a8c939a3b087a1576c3a097ebffd9de--porsche--redneck.jpg',
+	Scion: 'http://www.thedistractionnetwork.com/images/car-fails-382.jpg',
+	Subaru: 'http://www.funcage.com/blog/wp-content/uploads/2013/11/Funny-Modified-Cars-014.jpg',
+	Tesla: 'https://i.pinimg.com/564x/78/40/3a/78403a35e1e0c401189a590403729dd3--sun-solar-solar-power.jpg',
+	Toyota: 'https://img.odometer.com/slides/3/1/0/1/5/3/3101538885/a68ee72672c1031d7d4a1662416dbe78c25bbe5b.jpeg',
+	Volkswagon: 'https://i.kinja-img.com/gawker-media/image/upload/s--Fr122iGw--/c_scale,fl_progressive,q_80,w_800/187f2qbcdh5uxjpg.jpg',
+	Volvo: 'https://www.oddee.com/wp-content/uploads/_media/imgs/articles2/a97266_g176_8-no-tire.jpg'
+
 };
