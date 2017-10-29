@@ -31,3 +31,8 @@ export const models = {
 	Volkswagon: ['Atlas','Beetle','CC','e-Golf','Eos','Golf','Golf Alltrack','Golf GTI','Golf R','Golf SportWagen','Jetta','Passat','Tiguan','Touareg'],
 	Volvo: ['S60','S80','S90','V60','V90','XC40','XC60','XC70','XC90']
 };
+export const links = {
+	Acura: 'http://cdn2.holytaco.com/wp-content/uploads/RN3.jpg',
+	Audi: 'https://img.odometer.com/filter:scale/quill/f/9/b/3/6/d/f9b36db3/7cbbceda9d6c246a8f83e4aa78cbe3fe4686647b.png?mw=615',
+	BMW: 'https://piximus.net/media/37765/redneck-car-hacks-that-everyone-needs-to-try-1.jpg'
+};

@@ -1,3 +1,10 @@
+form{
+    &.bordered{
+        border: 1px solid $blue-dark;
+        border-radius: $brd-rad;
+        padding: 10px;
+    }
+}
 label{
     display: block;
     margin-bottom: 10px;

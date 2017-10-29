@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WebComponent from '@clubajax/react-web-component';
 import '@clubajax/popup-list/src/drop-down';
-import { makes, models } from '../util/car-data';
+import { makes, models, links } from '../util/car-data';
 import bind from '../util/bind';
 
 export default class CarSelector extends Component {
@@ -9,14 +9,28 @@ export default class CarSelector extends Component {
 	constructor () {
 		super();
 		this.state = {
-			models: []
+			models: [],
+			make: null,
+			model: null
 		};
-		bind(this, 'onChange');
+		bind(this, 'onChooseMake,onChooseModel');
 	}
 
-	onChange (e) {
-		console.log('cng', e.target.value);
-		this.setState({ models: models[e.target.value] });
+	onChooseMake (e) {
+		const value = e.target.value;
+		console.log('make', value);
+		this.setState({ models: models[value], make: value });
+	}
+
+	onChooseModel (e) {
+		const value = e.target.value;
+		console.log('model', value);
+		this.setState({ model: value });
+		this.props.onChange({
+			make: this.state.make,
+			model: value,
+			link: links[this.state.make]
+		});
 	}
 
 	render () {
@@ -27,13 +41,14 @@ export default class CarSelector extends Component {
 					label="Make"
 					placeholder="Choose Make"
 					data={makes}
-					onChange={this.onChange}
+					onChange={this.onChooseMake}
 				/>
 				<WebComponent
 					component="drop-down"
 					label="Model"
 					placeholder="Choose Model"
 					data={this.state.models}
+					onChange={this.onChooseModel}
 				/>
 			</div>
 		);

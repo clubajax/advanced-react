@@ -1,0 +1,22 @@
+.settings-page{
+    .car-display{
+        display: flex;
+        justify-content: center;
+        .pic-display{
+            display: inline-block;
+            margin-left: 3px;
+
+            img{
+               height: 270px;
+                border: 1px solid $blue-dark;
+                border-radius: $brd-rad;
+            }
+        }
+        form{
+            display: inline-block;
+            width: 300px;
+            margin-right: 3px;
+        }
+    }
+
+}

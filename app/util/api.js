@@ -46,3 +46,30 @@ export function auth () {
 		});
 	});
 }
+
+export function postCar (data) {
+	return new Promise((resolve) => {
+		storage('make', data.make);
+		storage('model', data.model);
+		storage('link', data.link);
+		timed(() => {
+			resolve();
+		});
+	});
+}
+
+export function getCar () {
+	return new Promise((resolve) => {
+		timed(() => {
+			if (!storage('make')) {
+				resolve(null);
+				return;
+			}
+			resolve({
+				make: storage('make'),
+				model: storage('model'),
+				link: storage('link')
+			});
+		});
+	});
+}
