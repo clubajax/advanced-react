@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WebComponent from '@clubajax/react-web-component';
 import '@clubajax/popup-list/src/drop-down';
-import { makes, models, links } from '../util/car-data';
+import { types, makes, models, links } from '../util/car-data';
 import bind from '../util/bind';
 
 export default class CarSelector extends Component {
@@ -9,27 +9,37 @@ export default class CarSelector extends Component {
 	constructor (props) {
 		super();
 		this.state = {
+			makes: [],
 			models: [],
 			make: null,
 			model: null
 		};
-		console.log('CONST', props);
-		bind(this, 'onChooseMake,onChooseModel');
+		bind(this, 'onChooseType,onChooseMake,onChooseModel');
 	}
 
 	componentWillReceiveProps (props) {
-		if (props.value && props.value.make) {
+		if (props.value && props.value.type) {
 			this.setState({
-				models: models[props.value.make],
+				type: props.value.type,
 				make: props.value.make,
-				model: props.value.model
+				model: props.value.model,
+				makes: makes[props.value.type],
+				models: models[props.value.make]
 			});
+		}
+	}
+
+	onChooseType (e) {
+		const value = e.target.value;
+		if (value) {
+			this.setState({ makes: makes[value], type: value });
+		} else {
+			console.log('RESET');
 		}
 	}
 
 	onChooseMake (e) {
 		const value = e.target.value;
-		console.log('make', value);
 		if (value) {
 			this.setState({ models: models[value], make: value });
 		} else {
@@ -39,9 +49,9 @@ export default class CarSelector extends Component {
 
 	onChooseModel (e) {
 		const value = e.target.value;
-		console.log('model', value);
 		this.setState({ model: value });
 		this.props.onChange({
+			type: this.state.type,
 			make: this.state.make,
 			model: value,
 			link: links[this.state.make]
@@ -53,9 +63,17 @@ export default class CarSelector extends Component {
 			<div className="car-selector">
 				<WebComponent
 					component="drop-down"
+					label="Type"
+					placeholder="Choose Type"
+					data={types}
+					value={this.state.type}
+					onChange={this.onChooseType}
+				/>
+				<WebComponent
+					component="drop-down"
 					label="Make"
 					placeholder="Choose Make"
-					data={makes}
+					data={this.state.makes}
 					value={this.state.make}
 					onChange={this.onChooseMake}
 				/>

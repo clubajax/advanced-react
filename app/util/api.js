@@ -49,7 +49,8 @@ export function auth () {
 
 export function postCar (data) {
 	return new Promise((resolve, reject) => {
-		if (data.make) {
+		if (data.type && data.make && data.model) {
+			storage('type', data.type);
 			storage('make', data.make);
 			storage('model', data.model);
 			storage('link', data.link);
@@ -75,6 +76,7 @@ export function getCar () {
 				return;
 			}
 			resolve({
+				type: storage('type'),
 				make: storage('make'),
 				model: storage('model'),
 				link: storage('link')

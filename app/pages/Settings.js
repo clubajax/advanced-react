@@ -11,7 +11,7 @@ export default class Settings extends Component {
 	constructor () {
 		super();
 		this.state = {
-			models: [],
+			type: null,
 			make: null,
 			model: null,
 			link: null,
@@ -24,13 +24,9 @@ export default class Settings extends Component {
 
 	componentDidMount () {
 		getCar().then((data) => {
+			console.log('GET', data);
 			this.setState({ loading: false });
 			if (data) {
-				// this.setState({
-				// 	make: data.make,
-				// 	model: data.model,
-				// 	link: data.link
-				// });
 				this.setDisplay(data);
 			}
 		});
@@ -58,6 +54,7 @@ export default class Settings extends Component {
 
 	setDisplay (data) {
 		this.setState({
+			type: data.type,
 			make: data.make,
 			model: data.model,
 			link: data.link,
@@ -76,6 +73,7 @@ export default class Settings extends Component {
 					<form className="bordered" onSubmit={this.onSubmit}>
 						<CarSelector
 							value={{
+								type: this.state.type,
 								make: this.state.make,
 								model: this.state.model,
 								link: this.state.link

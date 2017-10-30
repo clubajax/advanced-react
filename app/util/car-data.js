@@ -1,4 +1,10 @@
-export const makes = ['Acura','Audi','BMW','Buick','Cadillac','Chevrolet','Chrysler','Dodge','Ford','GMC','Honda','Hyundai','INFINITI','Jaguar','Jeep','Kia','Lexus','Lincoln','Mazda','Mercedes-Benz','Mitsubishi','Nissan','Porsche','Scion','Subaru','Tesla','Toyota','Volkswagen','Volvo'];
+
+export const types = ['Domestic', 'Foreign'];
+export const makes = {
+	Domestic: ['Buick','Cadillac','Chevrolet','Chrysler','Dodge','Ford','GMC','Jeep','Lincoln','Tesla'],
+	Foreign: ['Acura','Audi','BMW','Honda','Hyundai','INFINITI','Jaguar','Kia','Lexus','Mazda','Mercedes-Benz','Mitsubishi','Nissan','Porsche','Scion','Subaru','Toyota','Volkswagen','Volvo']
+};
+export const xmakes = ['Acura','Audi','BMW','Buick','Cadillac','Chevrolet','Chrysler','Dodge','Ford','GMC','Honda','Hyundai','INFINITI','Jaguar','Jeep','Kia','Lexus','Lincoln','Mazda','Mercedes-Benz','Mitsubishi','Nissan','Porsche','Scion','Subaru','Tesla','Toyota','Volkswagen','Volvo'];
 export const models = {
 	Acura: ['ILX','MDX','MDX Sport Hybrid','NSX','RDX','RLX','RLX Sport Hybrid','TLX'],
 	Audi: ['A3','A3 Sportback e-tron','A4','A4 allroad','A5','A5 Sport','A6','A7','A8','allroad','Q3','Q5','Q7','R8','RS 3','RS 7','S3','S4','S5','S6','S7','S8','SQ5','TT'],
@@ -41,7 +47,7 @@ export const links = {
 	Dodge: 'http://whitetrashrepairs.com/wp-content/uploads/2017/01/e2abac1eece7ab7e151cf96a0f9c28bd.jpg',
 	Ford: 'https://i.pinimg.com/736x/7f/e2/db/7fe2db4618e75591df86507ae4f0df5b--truck-bed-car-pictures.jpg',
 	GMC: 'http://i.dailymail.co.uk/i/pix/2014/02/05/article-2552152-1B36337A00000578-792_634x463.jpg',
-	Honda: '',
+	Honda: 'http://www.chinadaily.com.cn/business/motoring/img/attachement/jpg/site1/20141226/0023ae82ca0f1607120805.jpg',
 	Hyundai: 'http://www.fullredneck.com/wp-content/uploads/2016/04/Redneck-Car-20.jpg',
 	INFINITI: 'https://1funny.com/wp-content/uploads/2010/03/daily_picdump_640_70-e1269007416595.jpg',
 	Jaguar: 'https://whyweprotest.net/attachments/hillbillyair-jpg.257602/',
