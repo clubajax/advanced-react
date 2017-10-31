@@ -18,6 +18,7 @@ export default class CarSelector extends Component {
 	}
 
 	componentWillReceiveProps (props) {
+		console.log('componentWillReceiveProps', props);
 		if (props.value && props.value.type) {
 			this.setState({
 				type: props.value.type,
@@ -30,24 +31,23 @@ export default class CarSelector extends Component {
 	}
 
 	onChooseType (e) {
+		console.log('on type');
 		const value = e.target.value;
 		if (value) {
 			this.setState({ makes: makes[value], type: value });
-		} else {
-			console.log('RESET');
 		}
 	}
 
 	onChooseMake (e) {
+		console.log('on make');
 		const value = e.target.value;
 		if (value) {
 			this.setState({ models: models[value], make: value });
-		} else {
-			console.log('RESET');
 		}
 	}
 
 	onChooseModel (e) {
+		console.log('on model');
 		const value = e.target.value;
 		this.setState({ model: value });
 		this.props.onChange({
@@ -59,6 +59,7 @@ export default class CarSelector extends Component {
 	}
 
 	render () {
+		console.log('render');
 		return (
 			<div className="car-selector">
 				<WebComponent
@@ -78,6 +79,7 @@ export default class CarSelector extends Component {
 					onChange={this.onChooseMake}
 				/>
 				<WebComponent
+					key={this.state.type}
 					component="drop-down"
 					label="Model"
 					placeholder="Choose Model"

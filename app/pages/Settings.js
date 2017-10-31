@@ -17,14 +17,15 @@ export default class Settings extends Component {
 			link: null,
 			busy: false,
 			loading: true,
-			error: null
+			error: null,
+			clickCount: 0,
+			imageLoading: false
 		};
-		bind(this, 'onSelect,onSubmit');
+		bind(this, 'onSelect,onSubmit,onImageLoad,onImageClick');
 	}
 
 	componentDidMount () {
 		getCar().then((data) => {
-			console.log('GET', data);
 			this.setState({ loading: false });
 			if (data) {
 				this.setDisplay(data);
@@ -34,7 +35,6 @@ export default class Settings extends Component {
 
 	onSubmit (e) {
 		e.preventDefault();
-		console.log('onSave', e);
 		this.setState({ busy: true });
 		postCar(this.state).then(() => {
 			this.setState({ busy: false });
@@ -48,8 +48,19 @@ export default class Settings extends Component {
 	}
 
 	onSelect (e) {
-		console.log('onSelect', e);
+		console.log('onCarSelect', e);
 		this.setDisplay(e);
+	}
+
+	onImageLoad () {
+		console.log('image loaded');
+		this.setState({ imageLoading: false });
+	}
+
+	onImageClick () {
+		// Note that this state is not related to any components,
+		// yet still triggers a render all the way down
+		this.setState({ clickCount: this.state.clickCount + 1 });
 	}
 
 	setDisplay (data) {
@@ -58,7 +69,8 @@ export default class Settings extends Component {
 			make: data.make,
 			model: data.model,
 			link: data.link,
-			error: null
+			error: null,
+			imageLoading: true
 		});
 	}
 
@@ -90,7 +102,14 @@ export default class Settings extends Component {
 						</div>
 					</form>
 					<div className="pic-display">
-						{this.state.link && <img src={this.state.link} alt={this.state.make} />}
+						{this.state.imageLoading && <Loader />}
+						{this.state.link && <img
+							src={this.state.link}
+							alt={this.state.make}
+							onLoad={this.onImageLoad}
+							onClick={this.onImageClick}
+						/>
+						}
 					</div>
 				</div>
 			</main>
