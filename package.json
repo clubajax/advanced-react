@@ -37,7 +37,7 @@
 		"@clubajax/custom-elements-polyfill": "^0.8.3",
 		"@clubajax/data-table": "^0.6.4",
 		"@clubajax/date-picker": "^0.10.8",
-		"@clubajax/popup-list": "^0.9.3",
+		"@clubajax/popup-list": "^0.9.6",
 		"@clubajax/promise-polyfill": "^1.0.1",
 		"@clubajax/react-web-component": "^0.9.2",
 		"react": "^16.0.0",
