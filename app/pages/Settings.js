@@ -54,12 +54,14 @@ export default class Settings extends Component {
 
 	onImageLoad () {
 		console.log('image loaded');
-		this.setState({ imageLoading: false });
+		//this.setState({ imageLoading: false });
 	}
 
 	onImageClick () {
 		// Note that this state is not related to any components,
 		// yet still triggers a render all the way down
+		//
+		// example: Change "make" and click on image
 		this.setState({ clickCount: this.state.clickCount + 1 });
 	}
 
@@ -70,7 +72,7 @@ export default class Settings extends Component {
 			model: data.model,
 			link: data.link,
 			error: null,
-			imageLoading: true
+			//imageLoading: true
 		});
 	}
 
