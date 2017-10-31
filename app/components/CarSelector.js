@@ -32,7 +32,7 @@ export default class CarSelector extends Component {
 	onChooseType (e) {
 		const value = e.target.value;
 		if (value) {
-			this.setState({ makes: makes[value], type: value });
+			this.setState({ makes: makes[value], type: value, models: [] });
 		} else {
 			console.log('RESET');
 		}
