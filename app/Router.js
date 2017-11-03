@@ -1,10 +1,8 @@
 import React from 'react';
 import {  BrowserRouter, Route, Switch } from 'react-router-dom';
-//import { Router } from 'react-router';
-//
+
 import Login from './pages/Login';
 import Home from './pages/Home';
-
 
 export default function AppRouter () {
 	return (
