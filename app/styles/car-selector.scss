@@ -1,4 +1,7 @@
 .car-selector{
+    border: 1px solid $blue-dark;
+    border-radius: $brd-rad;
+    padding: 10px;
     drop-down{
         display: block;
         margin-bottom: 20px;

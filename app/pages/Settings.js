@@ -48,7 +48,9 @@ export default class Settings extends Component {
 	}
 
 	onSelect (e) {
-		console.log('onSelect', e);
+		if (e.model === this.state.model) {
+			return;
+		}
 		this.setDisplay(e);
 	}
 
@@ -70,7 +72,7 @@ export default class Settings extends Component {
 			<main className="settings-page">
 				<h2>Settings Page</h2>
 				<div className="car-display">
-					<form className="bordered" onSubmit={this.onSubmit}>
+					<form onSubmit={this.onSubmit}>
 						<CarSelector
 							value={{
 								type: this.state.type,
@@ -89,9 +91,8 @@ export default class Settings extends Component {
 							>Save</Button>
 						</div>
 					</form>
-					<div className="pic-display">
-						{this.state.link && <img src={this.state.link} alt={this.state.make} />}
-					</div>
+					{this.state.link &&
+					<div className="pic-display"><img src={this.state.link} alt={this.state.make} /></div>}
 				</div>
 			</main>
 		);
