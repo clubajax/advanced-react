@@ -3,7 +3,6 @@ import CarSelector from '../components/CarSelector';
 import Button from '../components/Button';
 import Loader from '../assets/Loader';
 import Error from '../components/Error';
-import bind from '../util/bind';
 import { postCar, getCar } from '../util/api';
 
 export default class Settings extends Component {
@@ -21,7 +20,6 @@ export default class Settings extends Component {
 			clickCount: 0,
 			imageLoading: false
 		};
-		bind(this, 'onSelect,onSubmit,onImageClick');
 	}
 
 	componentDidMount () {
@@ -33,7 +31,18 @@ export default class Settings extends Component {
 		});
 	}
 
-	onSubmit (e) {
+	setDisplay (data) {
+		this.setState({
+			type: data.type,
+			make: data.make,
+			model: data.model,
+			link: data.link,
+			error: null
+		});
+	}
+
+	// bound methods
+	onSubmit = (e) => {
 		e.preventDefault();
 		this.setState({ busy: true });
 		postCar(this.state).then(() => {
@@ -47,29 +56,19 @@ export default class Settings extends Component {
 		});
 	}
 
-	onSelect (e) {
+	onSelect = (e) => {
 		if (e.model === this.state.model) {
 			return;
 		}
 		this.setDisplay(e);
 	}
 
-	onImageClick () {
+	onImageClick = () => {
 		// Note that this state is not related to any components,
 		// yet still triggers a render all the way down
 		//
 		// example: Change "make" and click on image
 		this.setState({ clickCount: this.state.clickCount + 1 });
-	}
-
-	setDisplay (data) {
-		this.setState({
-			type: data.type,
-			make: data.make,
-			model: data.model,
-			link: data.link,
-			error: null
-		});
 	}
 
 	render () {

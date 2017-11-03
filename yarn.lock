@@ -49,9 +49,9 @@
     grunt "^1.0.1"
     grunt-contrib-uglify "^2.3.0"
 
-"@clubajax/popup-list@^0.9.6":
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/@clubajax/popup-list/-/popup-list-0.9.6.tgz#788229eda03cdcf2483c2f544eabd05fb86a5d74"
+"@clubajax/popup-list@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@clubajax/popup-list/-/popup-list-0.9.7.tgz#857830beddbfdadb58c6e69de56dbaaae1bd0338"
   dependencies:
     "@clubajax/base-component" "^1.6.7"
     "@clubajax/dom" "^2.1.6"

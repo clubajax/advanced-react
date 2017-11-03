@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import Field from '../components/Field';
 import { login } from '../util/api';
 import goto from '../util/goto';
-import bind from '../util/bind';
 import { required, password } from '../util/validation'
 
 export default class Login extends Component {
@@ -20,10 +19,9 @@ export default class Login extends Component {
 			busy: false,
 			valid: {}
 		};
-		bind(this, 'submit,onChange,onValid');
 	}
 
-	submit (e) {
+	submit = (e) => {
 		e.preventDefault();
 		this.setState({ busy: true });
 		login(this.state.username, this.state.password).then(() => {
@@ -39,13 +37,13 @@ export default class Login extends Component {
 		return false;
 	}
 
-	onChange (e) {
+	onChange = (e) => {
 		this.setState({
 			[e.name]: e.value
 		});
 	}
 
-	onValid (e) {
+	onValid = (e) => {
 		this.setState({
 			valid: {...this.state.valid, [e.name]: e.valid}
 		})

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import WebComponent from '@clubajax/react-web-component';
 import '@clubajax/popup-list/src/drop-down';
 import { types, makes, models, links } from '../util/car-data';
-import bind from '../util/bind';
 
 export default class CarSelector extends Component {
 
@@ -14,11 +13,9 @@ export default class CarSelector extends Component {
 			make: null,
 			model: null
 		};
-		bind(this, 'onChooseType,onChooseMake,onChooseModel');
 	}
 
 	componentWillReceiveProps (props) {
-		console.log('componentWillReceiveProps', props);
 		if (props.value && props.value.type) {
 			this.setState({
 				type: props.value.type,
@@ -30,8 +27,7 @@ export default class CarSelector extends Component {
 		}
 	}
 
-	onChooseType (e) {
-		console.log('on type');
+	onChooseType = (e) => {
 		const value = e.target.value;
 		if (value) {
 			this.setState({ makes: makes[value], type: value, models: [] });
@@ -40,16 +36,14 @@ export default class CarSelector extends Component {
 		}
 	}
 
-	onChooseMake (e) {
-		console.log('on make');
+	onChooseMake = (e) => {
 		const value = e.target.value;
 		if (value) {
 			this.setState({ models: models[value], make: value });
 		}
 	}
 
-	onChooseModel (e) {
-		console.log('on model');
+	onChooseModel = (e) => {
 		const value = e.target.value;
 		this.setState({ model: value });
 		this.props.onChange({
@@ -61,7 +55,6 @@ export default class CarSelector extends Component {
 	}
 
 	render () {
-		console.log('render');
 		return (
 			<div className="car-selector">
 				<WebComponent

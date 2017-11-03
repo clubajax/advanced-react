@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import bind from '../util/bind';
 
 export default class Field extends Component {
 
@@ -11,10 +10,9 @@ export default class Field extends Component {
 			errorMessage: '',
 			className: ''
 		};
-		bind(this, 'onChange,onBlur');
 	}
 
-	onChange (e) {
+	onChange = (e) => {
 		const value = e.target.value;
 		this.setState({
 			value,
@@ -27,7 +25,7 @@ export default class Field extends Component {
 		this.onValid(value);
 	}
 
-	onBlur () {
+	onBlur = () => {
 		if (this.props.validation && this.state.touched) {
 			const errorMessage = this.props.validation(this.state.value);
 			this.setState({
