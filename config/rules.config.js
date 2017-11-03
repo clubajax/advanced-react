@@ -1,7 +1,7 @@
 const path = require('path');
 const cssFn = require('./css.config');
 
-const libsToBabelize = /ui-shared|date-picker|data-table/;
+const libsToBabelize = /date-picker|data-table/;
 
 module.exports = function (isProd, ROOT) {
 
@@ -22,17 +22,19 @@ module.exports = function (isProd, ROOT) {
 
 			return false;
 		},
-		loaders: 'babel-loader',
 		include: [
 			// see libsToBabelize above
 			path.join(ROOT, './app'),
-			// path.join(ROOT, './node_modules/ui-shared'),
+			path.join(ROOT, './node_modules/@clubajax/data-table'),
+			path.join(ROOT, './node_modules/@clubajax/popup-list'),
 			// path.join(ROOT, './node_modules/@clubajax/date-picker'),
-			// path.join(ROOT, './node_modules/@clubajax/data-table'),
 			// path.join(ROOT, './node_modules/@clubajax/react-web-component')
 		],
-		query: {
-			presets: [['env', { targets: { node: 4 } }]]
+		use:{
+			loader: 'babel-loader',
+			options:{
+				babelrc: true
+			}
 		}
 	};
 
