@@ -9,7 +9,7 @@ const columns = 'firstName,lastName,company,city,state,zipcode'.split(',');
 export default function Home () {
 	return (
 		<main>
-			<h2>Home Page</h2>
+			<h2>Home Page - Web Component Example</h2>
 			<div className="data-table-wrapper">
 				<WebComponent
 					component="data-table"

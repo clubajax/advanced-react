@@ -5,7 +5,7 @@
         .pic-display{
             display: inline-block;
             margin-left: 3px;
-
+            cursor: pointer;
             img{
                height: 320px;
                 border: 1px solid $blue-dark;
@@ -16,6 +16,11 @@
             display: inline-block;
             width: 300px;
             margin-right: 3px;
+            .clicks{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
         }
     }
 

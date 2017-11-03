@@ -21,7 +21,7 @@ export default class Settings extends Component {
 			clickCount: 0,
 			imageLoading: false
 		};
-		bind(this, 'onSelect,onSubmit,onImageLoad,onImageClick');
+		bind(this, 'onSelect,onSubmit,onImageClick');
 	}
 
 	componentDidMount () {
@@ -48,13 +48,10 @@ export default class Settings extends Component {
 	}
 
 	onSelect (e) {
-		console.log('onCarSelect', e);
+		if (e.model === this.state.model) {
+			return;
+		}
 		this.setDisplay(e);
-	}
-
-	onImageLoad () {
-		console.log('image loaded');
-		//this.setState({ imageLoading: false });
 	}
 
 	onImageClick () {
@@ -71,8 +68,7 @@ export default class Settings extends Component {
 			make: data.make,
 			model: data.model,
 			link: data.link,
-			error: null,
-			//imageLoading: true
+			error: null
 		});
 	}
 
@@ -84,7 +80,7 @@ export default class Settings extends Component {
 			<main className="settings-page">
 				<h2>Settings Page</h2>
 				<div className="car-display">
-					<form className="bordered" onSubmit={this.onSubmit}>
+					<form onSubmit={this.onSubmit}>
 						<CarSelector
 							value={{
 								type: this.state.type,
@@ -96,6 +92,7 @@ export default class Settings extends Component {
 						/>
 						<Error error={this.state.error} />
 						<div className="button-row">
+							<span className="clicks">Clicks: {this.state.clickCount}</span>
 							<Button
 								busyText="Saving..."
 								onClick={this.onSave}
@@ -103,16 +100,8 @@ export default class Settings extends Component {
 							>Save</Button>
 						</div>
 					</form>
-					<div className="pic-display">
-						{this.state.imageLoading && <Loader />}
-						{this.state.link && <img
-							src={this.state.link}
-							alt={this.state.make}
-							onLoad={this.onImageLoad}
-							onClick={this.onImageClick}
-						/>
-						}
-					</div>
+					{this.state.link &&
+					<div className="pic-display"><img src={this.state.link} alt={this.state.make} onClick={this.onImageClick} /></div>}
 				</div>
 			</main>
 		);
