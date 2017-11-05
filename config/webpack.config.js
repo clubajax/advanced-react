@@ -5,7 +5,7 @@ const ROOT = __dirname + '/../';
 const PORT = '8888';
 const ENV = process.env.API;
 const isProd = false;
-const chromeOnly = true;
+const chromeOnly = false;
 
 module.exports = function () {
 
