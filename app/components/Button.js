@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Button (props) {
 	const { busyText, busy, title, type, children } = props;
-	console.log('busy:', busy, typeof busy);
 	const all = {
 		disabled: false,
 		type: type || 'submit'

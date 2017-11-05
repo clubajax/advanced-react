@@ -39,7 +39,6 @@ export default class Login extends Component {
 	}
 
 	onChange (e) {
-		console.log(e);
 		this.setState({
 			[e.name]: e.value
 		});
