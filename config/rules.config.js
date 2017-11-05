@@ -22,19 +22,17 @@ module.exports = function (isProd, ROOT) {
 
 			return false;
 		},
+		loaders: 'babel-loader',
 		include: [
 			// see libsToBabelize above
 			path.join(ROOT, './app'),
-			path.join(ROOT, './node_modules/@clubajax/data-table'),
-			path.join(ROOT, './node_modules/@clubajax/popup-list'),
+			// path.join(ROOT, './node_modules/ui-shared'),
 			// path.join(ROOT, './node_modules/@clubajax/date-picker'),
+			// path.join(ROOT, './node_modules/@clubajax/data-table'),
 			// path.join(ROOT, './node_modules/@clubajax/react-web-component')
 		],
-		use:{
-			loader: 'babel-loader',
-			options:{
-				babelrc: true
-			}
+		query: {
+			presets: [['env', { targets: { node: 4 } }]]
 		}
 	};
 

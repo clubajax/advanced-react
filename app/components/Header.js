@@ -4,7 +4,6 @@ import ClubAjax from '../assets/ClubAjax';
 import AppTitle from '../assets/AppTitle';
 import storage from '../util/storage';
 import { logout } from '../util/api';
-import '../assets/icon-logout';
 
 export default function Header () {
 	return (
@@ -12,7 +11,7 @@ export default function Header () {
 			<ClubAjax />
 			<AppTitle />
 			<menu className="right-top">
-				<icon-logout onClick={logout} />
+				<a onClick={logout} >Logout</a>
 				<span className="username">Welcome {storage('username')}</span>
 			</menu>
 			<menu>
