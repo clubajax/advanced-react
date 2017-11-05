@@ -12,7 +12,6 @@ class Icon extends BaseComponent {
 	}
 }
 
-
 customElements.define('icon-logout', Icon);
 
 module.exports = Icon;

@@ -32,11 +32,12 @@
 	},
 	"dependencies": {
 		"@clubajax/base-component": "^1.7.0",
-		"@clubajax/custom-elements-polyfill": "^0.8.3",
+		"@clubajax/custom-elements-polyfill": "^0.9.1",
 		"@clubajax/date-picker": "^0.10.8",
 		"@clubajax/popup-list": "^0.9.3",
 		"@clubajax/promise-polyfill": "^1.0.1",
 		"@clubajax/react-web-component": "^0.9.2",
+		"babel-preset-env": "^1.6.1",
 		"react": "^16.0.0",
 		"react-dom": "^16.0.0",
 		"react-router": "^4.2.0",
