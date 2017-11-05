@@ -1,9 +1,15 @@
 const path = require('path');
 const cssFn = require('./css.config');
+const browserChrom = [
+	"chrome >= 62"
+];
+const browserCompat = [
+	"last 2 versions"
+];
 
-module.exports = function (isProd, ROOT) {
+module.exports = function (options) {
 
-	const css = cssFn(isProd);
+	const css = cssFn(options.isProd);
 
 	const babel = {
 		test: /\.jsx?$/,
@@ -21,12 +27,26 @@ module.exports = function (isProd, ROOT) {
 			return false;
 		},
 		include: [
-			path.join(ROOT, './app'),
+			path.join(options.ROOT, './app'),
 		],
 		use:{
 			loader: 'babel-loader',
 			options:{
-				babelrc: true
+				//babelrc: true
+				presets: [
+					"react",
+					[
+						"env",
+						{
+							"targets": {
+								"browsers": options.chromeOnly ? browserChrom : browserCompat
+							}
+						}
+					]
+				],
+				plugins: [
+					"react-hot-loader/babel"
+				]
 			}
 		}
 	};

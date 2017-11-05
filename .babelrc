@@ -1,8 +1,18 @@
 {
-    "presets": [
-        "react"
-    ],
-    "plugins": [
-			"react-hot-loader/babel"
+	"presets": [
+		"react",
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": [
+						"chrome >= 62"
+					]
+				}
+			}
 		]
+	],
+	"plugins": [
+		"react-hot-loader/babel"
+	]
 }
