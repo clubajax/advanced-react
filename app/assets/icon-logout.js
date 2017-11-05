@@ -1,4 +1,4 @@
-const BaseComponent = require('@clubajax/base-component');
+const BaseComponent = require('BaseComponent');
 
 class Icon extends BaseComponent {
 	get templateString () {
@@ -11,7 +11,6 @@ class Icon extends BaseComponent {
 `;
 	}
 }
-
 
 customElements.define('icon-logout', Icon);
 
