@@ -25,6 +25,12 @@ module.exports = function (isProd) {
 
 		context: ROOT + '/app',
 
+		resolve: {
+			alias:{
+				BaseComponent: '@clubajax/base-component/src/index'
+			}
+		},
+
 		entry: {
 			vendor: vendorFiles,
 			app: appFiles
