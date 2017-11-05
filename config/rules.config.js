@@ -1,7 +1,7 @@
 const path = require('path');
 const cssFn = require('./css.config');
 
-const libsToBabelize = /ui-shared|date-picker|data-table/;
+const libsToBabelize = /date-picker|data-table/;
 
 module.exports = function (isProd, ROOT) {
 
