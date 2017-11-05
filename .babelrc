@@ -1,8 +1,16 @@
 {
     "presets": [
-        ["es2017"],
         "react",
-        "stage-0"
+		[
+			"env",
+			{
+				"targets": {
+					"browsers": [
+						"chrome >= 62"
+					]
+				}
+			}
+		]
     ],
     "plugins": [
 			"react-hot-loader/babel"
