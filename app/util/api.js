@@ -4,7 +4,8 @@ import goto from './goto';
 const API_DELAY = 1000;
 
 const users = {
-	clubajax: '123'
+	clubajax: '123',
+	qwe: '123'
 };
 
 function timed (cb, time) {

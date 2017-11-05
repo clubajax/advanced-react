@@ -1,6 +1,11 @@
 import React from 'react';
 
-export default function Button ({ busyText, busy, title, children, ...all }) {
+export default function Button (props) {
+	const { busyText, busy, title, type, children } = props;
+	const all = {
+		disabled: false,
+		type: type || 'submit'
+	};
 	let content = title || children;
 	if (busy) {
 		content = (<span><span className="spinner" /><span>{busyText || 'Loading...'}</span></span>) ;
