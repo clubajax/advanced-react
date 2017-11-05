@@ -7,6 +7,10 @@ module.exports = function plugins (isProd, ROOT) {
 	const vendorName = isProd ? '[name].[chunkhash].js' : 'vendor.js';
 	const ENV = 'dev';
 
+	const define = new webpack.DefinePlugin({
+		TRANSPILED: JSON.stringify(true),
+	});
+
 	const chunk = new webpack.optimize.CommonsChunkPlugin({
 		name: 'vendor',
 		filename: vendorName,
@@ -24,7 +28,8 @@ module.exports = function plugins (isProd, ROOT) {
 		template: 'index.html'
 	});
 
-	const common = [chunk, html];
+	console.log('define', define);
+	const common = [define, chunk, html];
 	const dev = [hmr];
 	const prod = [];
 

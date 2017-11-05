@@ -8,6 +8,12 @@
   dependencies:
     "@clubajax/on" "^2.1.4"
 
+"@clubajax/base-component@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@clubajax/base-component/-/base-component-1.7.0.tgz#5b6069dc539fdf8f5065fddc9cf1d1fdcf3bd3b3"
+  dependencies:
+    "@clubajax/on" "^2.1.6"
+
 "@clubajax/custom-elements-polyfill@^0.8.3":
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/@clubajax/custom-elements-polyfill/-/custom-elements-polyfill-0.8.3.tgz#cb481650940279c8fb198a3c24d92d1accea62f0"

@@ -33,7 +33,7 @@
 		"webpack-hot-middleware": "^2.18.2"
 	},
 	"dependencies": {
-		"@clubajax/base-component": "^1.6.7",
+		"@clubajax/base-component": "^1.7.0",
 		"@clubajax/custom-elements-polyfill": "^0.8.3",
 		"@clubajax/date-picker": "^0.10.8",
 		"@clubajax/popup-list": "^0.9.3",
