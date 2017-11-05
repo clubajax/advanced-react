@@ -45,7 +45,8 @@ module.exports = function (options) {
 					]
 				],
 				plugins: [
-					"react-hot-loader/babel"
+					"react-hot-loader/babel",
+					"transform-object-rest-spread"
 				]
 			}
 		}
