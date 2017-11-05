@@ -1,11 +1,15 @@
 const path = require('path');
 const cssFn = require('./css.config');
+const browserChrom = [
+	"chrome >= 62"
+];
+const browserCompat = [
+	"last 2 versions"
+];
 
-const libsToBabelize = /ui-shared|date-picker|data-table/;
+module.exports = function (options) {
 
-module.exports = function (isProd, ROOT) {
-
-	const css = cssFn(isProd);
+	const css = cssFn(options.isProd);
 
 	const babel = {
 		test: /\.jsx?$/,
@@ -16,23 +20,34 @@ module.exports = function (isProd, ROOT) {
 				console.log('babelizing...');
 			}
 
-			if (/node_modules/.test(path) && !libsToBabelize.test(path)) {
+			if (/node_modules/.test(path)) {
 				return true;
 			}
 
 			return false;
 		},
-		loaders: 'babel-loader',
 		include: [
-			// see libsToBabelize above
-			path.join(ROOT, './app'),
-			// path.join(ROOT, './node_modules/ui-shared'),
-			// path.join(ROOT, './node_modules/@clubajax/date-picker'),
-			// path.join(ROOT, './node_modules/@clubajax/data-table'),
-			// path.join(ROOT, './node_modules/@clubajax/react-web-component')
+			path.join(options.ROOT, './app'),
 		],
-		query: {
-			presets: [['env', { targets: { node: 4 } }]]
+		use:{
+			loader: 'babel-loader',
+			options:{
+				//babelrc: true
+				presets: [
+					"react",
+					[
+						"env",
+						{
+							"targets": {
+								"browsers": options.chromeOnly ? browserChrom : browserCompat
+							}
+						}
+					]
+				],
+				plugins: [
+					"react-hot-loader/babel"
+				]
+			}
 		}
 	};
 
