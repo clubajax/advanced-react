@@ -44,7 +44,9 @@ export default class CarSelector extends Component {
 	}
 
 	onChooseModel = (e) => {
+		const name = e.target.getAttribute('name');
 		const value = e.target.value;
+		console.log('model', name, value);
 		this.setState({ model: value });
 		this.props.onChange({
 			type: this.state.type,
@@ -77,6 +79,7 @@ export default class CarSelector extends Component {
 					key={this.state.type}
 					component="drop-down"
 					label="Model"
+					name="model"
 					placeholder="Choose Model"
 					data={this.state.models}
 					value={this.state.model}
