@@ -1,4 +1,19 @@
-body{
-    font-family: sans-serif;
-    font-size: 12px;
-}
+@import "../../node_modules/@clubajax/data-table/src/data-table.scss";
+@import "../../node_modules/@clubajax/popup-list/src/popup-list.scss";
+
+@import "colors";
+
+@import "assets";
+@import "form";
+@import "global";
+@import "spinner";
+@import "loader";
+@import "data-table";
+@import "car-selector";
+@import "error";
+@import "header";
+
+@import "login";
+@import "settings";
+@import "hoc";
+@import "not-found";

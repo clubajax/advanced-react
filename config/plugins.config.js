@@ -2,10 +2,14 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const cssFn = require('./css.config');
 
-module.exports = function plugins (isProd, ROOT) {
+module.exports = function plugins (options) {
 
-	const vendorName = isProd ? '[name].[chunkhash].js' : 'vendor.js';
+	const vendorName = options.isProd ? '[name].[chunkhash].js' : 'vendor.js';
 	const ENV = 'dev';
+
+	const define = new webpack.DefinePlugin({
+		NO_NATIVE_SHIM: JSON.stringify(options.chromeOnly)
+	});
 
 	const chunk = new webpack.optimize.CommonsChunkPlugin({
 		name: 'vendor',
@@ -24,11 +28,12 @@ module.exports = function plugins (isProd, ROOT) {
 		template: 'index.html'
 	});
 
-	const common = [chunk, html];
+	console.log('define', define);
+	const common = [define, chunk, html];
 	const dev = [hmr];
 	const prod = [];
 
-	return isProd ?
+	return options.isProd ?
 		[...common, ...prod] :
 		[...common, ...dev];
 };

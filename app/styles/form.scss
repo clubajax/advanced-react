@@ -1,0 +1,63 @@
+form{
+    &.bordered{
+        border: 1px solid $blue-dark;
+        border-radius: $brd-rad;
+        padding: 10px;
+    }
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+    span{
+        display: block;
+        margin-bottom: 5px;
+    }
+    input{
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid $gray-2;
+        border-radius: $brd-rad;
+    }
+    &.invalid{
+        input{
+            border: 2px dotted $error;
+        }
+    }
+}
+
+.button-row{
+    text-align: right;
+    margin: 20px 0;
+    position: relative;
+}
+button{
+    border: 1px solid #058cd4;
+    border-radius: $brd-rad;
+    padding: 10px 15px;
+    background-color: #058cd4;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    &.outlined{
+        background-color: rgba(255,255,255,0);
+        border: 1px solid white;
+        &:hover{
+            background-color: rgba(255,255,255,0.4);
+        }
+    }
+    span{
+        vertical-align: middle;
+    }
+    &:disabled{
+        cursor: default;
+        font-style: italic;
+        background-color: $gray-3;
+        color: white;
+        border-color: $gray-4;
+        &.outlined {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+}
