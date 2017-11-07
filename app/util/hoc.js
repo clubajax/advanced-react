@@ -14,6 +14,16 @@ export const create = (node) => {
 	}
 }
 
+export const addProps = (node, props) => {
+	const cloned = mix(node);
+	cloned.props = mix(cloned.props, props);
+	return cloned;
+}
+
+export const style = (node, style) => {
+	return addProps(node, { style });
+}
+
 export const compose  = (...fns) => {
 	return (...args) => {
 		return fns.reduce((a, b) => {
