@@ -20,8 +20,8 @@ export default function Header () {
 				<Link to="/settings">Settings</Link>
 				<Link to="/hoc-pre">PRE-HOC</Link>
 				<Link to="/hoc-post">POST-HOC</Link>
-				<Link to="/hoc-2">HOC 2</Link>
-				<Link to="/hoc">HOCs</Link>
+				<Link to="/hoc-raw">HOC RAW</Link>
+				<Link to="/hoc-complex">HOC-COMPLEX</Link>
 			</menu>
 		</header>
 	)

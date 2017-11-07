@@ -75,10 +75,10 @@ class BaseComponent extends React.Component {
 	}
 }
 
-const UpperCaseToggleableComponent = makeUpperCase(makeToggleable(withLogger(BaseComponent, 'red')));
+const UpperCaseToggleableComponent = makeUpperCase(makeToggleable(BaseComponent, 'red'));
 
 
-export default function HOC () {
+export default function HOCCOMPLEX () {
 	return (
 		<main>
 			<h2>HOC Page - Higher Order Components</h2>
