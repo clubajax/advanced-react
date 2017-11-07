@@ -2,7 +2,7 @@
 
 App for the Club AJAX Presentation
 
-Branch links to concepts presented 
+### Branch links to concepts presented 
 
 [0-startup](https://github.com/clubajax/advanced-react/tree/0-startup) - webpack, stub pages, basic router
 
