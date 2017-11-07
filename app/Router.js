@@ -7,6 +7,10 @@ import Header from './components/Header';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
+import HOC from './pages/HOC';
+import PREHOC1 from './pages/PRE-HOC-1';
+import HOC1 from './pages/HOC-1';
+import HOC2 from './pages/HOC-2';
 import NotFound from './pages/NotFound';
 
 export default function AppRouter () {
@@ -28,6 +32,10 @@ const Main = () => (
 		<Switch>
 			<Route path="/home" component={Home} />
 			<Route path="/settings" component={Settings} />
+			<Route path="/pre-hoc-1" component={PREHOC1} />
+			<Route path="/hoc-1" component={HOC1} />
+			<Route path="/hoc-2" component={HOC2} />
+			<Route path="/hoc" component={HOC} />
 			<Route component={NotFound} />
 		</Switch>
 	</div>

@@ -18,6 +18,10 @@ export default function Header () {
 			<menu>
 				<Link to="/home">Home</Link>
 				<Link to="/settings">Settings</Link>
+				<Link to="/pre-hoc-1">PRE HOC</Link>
+				<Link to="/hoc-1">HOC 1</Link>
+				<Link to="/hoc-2">HOC 2</Link>
+				<Link to="/hoc">HOCs</Link>
 			</menu>
 		</header>
 	)

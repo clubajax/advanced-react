@@ -1,7 +1,7 @@
 import storage from './storage';
 import goto from './goto';
 
-const API_DELAY = 1000;
+const API_DELAY = 100;
 
 const users = {
 	clubajax: '123',

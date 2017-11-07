@@ -1,0 +1,30 @@
+.hoc-wrapper {
+    display: block;
+    max-width: 500px;
+    margin: 20px auto;
+    span {
+        //display: inline-block;
+        //padding: 3px 10px;
+        //cursor: pointer;
+        //&.selected {
+        //    background-color: yellow;
+        //}
+    }
+    .clicker{
+        padding: 10px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+    .data-table-wrapper{
+        position: relative;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+}
+
+.selector-hoc{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

@@ -6,6 +6,7 @@ import { types, makes, models, links } from '../util/car-data';
 export default class CarSelector extends Component {
 
 	constructor (props) {
+		console.log('CarSelector');
 		super();
 		this.state = {
 			makes: [],

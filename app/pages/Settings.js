@@ -3,8 +3,8 @@ import CarSelector from '../components/CarSelector';
 import Button from '../components/Button';
 import Loader from '../assets/Loader';
 import Error from '../components/Error';
-import HOC from '../components/SelectorHOC';
 import { postCar, getCar } from '../util/api';
+
 
 export default class Settings extends Component {
 
@@ -103,7 +103,6 @@ export default class Settings extends Component {
 					{this.state.link &&
 					<div className="pic-display"><img src={this.state.link} alt={this.state.make} onClick={this.onImageClick} /></div>}
 				</div>
-				<HOC />
 			</main>
 		);
 	}
