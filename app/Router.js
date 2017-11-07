@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import Example from './pages/Example';
 import NotFound from './pages/NotFound';
 
-
 export default function AppRouter () {
 	return (
 		<Router history={history}>
