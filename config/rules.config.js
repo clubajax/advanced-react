@@ -6,6 +6,7 @@ const browserChrom = [
 const browserCompat = [
 	"last 2 versions"
 ];
+const libsToBabelize = /data-table|popup-list/;
 
 module.exports = function (options) {
 const libsToBabelize = /date-picker|data-table|popup-list/;
@@ -31,7 +32,7 @@ const libsToBabelize = /date-picker|data-table|popup-list/;
 			// see libsToBabelize above
 			path.join(options.ROOT, './app'),
 			path.join(options.ROOT, './node_modules/@clubajax/data-table'),
-			path.join(options.ROOT, './node_modules/@clubajax/popup-list'),
+			path.join(options.ROOT, './node_modules/@clubajax/popup-list')
 		],
 		use:{
 			loader: 'babel-loader',
