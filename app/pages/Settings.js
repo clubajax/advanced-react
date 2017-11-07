@@ -76,6 +76,7 @@ export default class Settings extends Component {
 		if (this.state.loading) {
 			return <Loader />;
 		}
+		console.log('this.state',this.state);
 		return (
 			<main className="settings-page">
 				<h2>Settings Page</h2>
