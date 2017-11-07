@@ -23,7 +23,7 @@ export default class PREHOC1 extends React.Component {
 	render () {
 		return (
 			<main>
-				<h2>HOC PRE</h2>
+				<h2>HOC PRE Basic</h2>
 				<div className="hoc-wrapper">
 					<div className="data-table-wrapper">
 						{!this.state.data && <Loader />}

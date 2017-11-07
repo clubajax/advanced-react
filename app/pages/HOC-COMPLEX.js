@@ -81,7 +81,7 @@ const UpperCaseToggleableComponent = makeUpperCase(makeToggleable(BaseComponent,
 export default function HOCCOMPLEX () {
 	return (
 		<main>
-			<h2>HOC Page - Higher Order Components</h2>
+			<h2>HOC Complex</h2>
 			<div className="hoc-wrapper">
 				<UpperCaseToggleableComponent title="batman" content="robin" />
 			</div>

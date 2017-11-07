@@ -1,5 +1,5 @@
 import React from 'react';
-import { create, style } from '../util/hoc';
+import { pure, style, logClick, toggleState } from '../util/hoc';
 
 let Raw = <div>Basic Node</div>;
 
@@ -10,9 +10,16 @@ Raw = style(Raw, {
 	cursor: 'pointer'
 });
 
-console.log('Raw', Raw);
+Raw = logClick(Raw);
 
-const Node = create(Raw);
+const Node = pure(Raw);
+
+
+let Raw2 = <div>Stateful Node</div>;
+Raw2 = toggleState({
+	method: 'click',
+	prop: 'className'
+}, Raw2);
 
 export default function HOC2 () {
 	return (
@@ -20,6 +27,7 @@ export default function HOC2 () {
 			<h2>HOC-2 - Higher Order Components</h2>
 			<div className="hoc-wrapper">
 				<Node />
+				<Raw2 />
 			</div>
 		</main>
 	)
