@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"@clubajax/base-component": "^1.7.0",
-		"@clubajax/custom-elements-polyfill": "^0.9.1",
+		"@clubajax/custom-elements-polyfill": "^0.9.2",
 		"@clubajax/date-picker": "^0.10.8",
 		"@clubajax/popup-list": "^0.9.3",
 		"@clubajax/promise-polyfill": "^1.0.1",
