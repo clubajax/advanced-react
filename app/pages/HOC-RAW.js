@@ -1,5 +1,5 @@
 import React from 'react';
-import { pure, style, logClick, toggleState } from '../util/hoc';
+import { pure, style, logClick, toggleState, toggleClass } from '../util/hoc';
 
 let Raw = <div>Basic Node</div>;
 
@@ -18,7 +18,8 @@ const Node = pure(Raw);
 let Raw2 = <div>Stateful Node</div>;
 Raw2 = toggleState({
 	method: 'click',
-	prop: 'className'
+	prop: 'className',
+	className: 'hoc-selected'
 }, Raw2);
 
 export default function HOC2 () {

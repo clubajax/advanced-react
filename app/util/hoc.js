@@ -65,6 +65,11 @@ export const withoutProp = (prop, Widget) => (props) => {
 	return <Widget {...props} />;
 }
 
+export const toggleClass = (toggleProp, className, Widget) => (props) => {
+	const cls = props[toggleProp] ? className : '';
+	return <Widget {...props} className={cls} />;
+}
+
 export const makeClickable = (component) => {
 	const cmpt = clone(component);
 	cmpt.props = mix(cmpt.props, {
@@ -75,7 +80,7 @@ export const makeClickable = (component) => {
 	return cmpt;
 }
 
-export const toggleState = (options, component) => {
+export const toggleState = (options, Component) => {
 	const components = {};
 	class ToggleState extends React.Component {
 		constructor () {
@@ -83,12 +88,22 @@ export const toggleState = (options, component) => {
 			this.state = {
 				[options.prop]: false
 			};
-			components.component = pure(addClick(options.method, this, component))
+			Component = addClick(options.method, this, Component);
+
+			components.Component = toggleClass(options.prop, options.className, (props) => {
+				return <Component {...props} />;
+			});
+
+			console.log('component', components.Component({}));
+
+			// component = pure(component);
+			// console.log('toggled', toggleClass(options.prop, options.className, component)({}));
+			// console.log('component()', component());
+			//components.Component = Component;
 		}
 
 		render () {
-			console.log('render.state', this.state);
-			return <components.component />;
+			return <components.Component />;
 		}
 	}
 
