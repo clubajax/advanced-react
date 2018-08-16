@@ -4,7 +4,7 @@ App for the Club AJAX Presentation
 
 ## Install
 
-You need node v10+
+**IMPORTANT: Use Node v6** (tested with node v6.11)
 
     git clone git@github.com:clubajax/advanced-react.git
     
@@ -12,7 +12,7 @@ You need node v10+
  
     yarn start
     
-Webpage will be available at `http://localhost:8888/`
+Page will be available at `http://localhost:8888/`
 
 Login: 
     user: anything
