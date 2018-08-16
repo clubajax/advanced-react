@@ -2,6 +2,22 @@
 
 App for the Club AJAX Presentation
 
+## Install
+
+You need node v10+
+
+    git clone git@github.com:clubajax/advanced-react.git
+    
+    yarn
+ 
+    yarn start
+    
+Webpage will be available at `http://localhost:8888/`
+
+Login: 
+    user: anything
+    password: at least 3 numbers
+ 
 ### Branch links to concepts presented 
 
 [0-startup](https://github.com/clubajax/advanced-react/tree/0-startup) - webpack, stub pages, basic router
